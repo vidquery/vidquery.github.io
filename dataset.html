@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Security Surveillance MVQA Dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>📊 Security Surveillance MVQA Dataset</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/png" href="./static/images/drone.png">
+</head>
+
+<body>
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-2">📊 Security Surveillance MVQA Dataset</h1>
+        <h2 class="subtitle is-5">A Multi-Camera Visual Question Answering Dataset for Surveillance Applications</h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop content">
+
+      <h2 class="title is-3">Abstract</h2>
+      <p>
+        We present the first Multi-View Visual Question Answering (MVQA) dataset specifically designed for the security surveillance domain. By integrating four public datasets—NextQA, AI-Challenge Re-identification Dataset, and USGun Mock Attack Dataset—we have curated a comprehensive dataset that includes 800 security surveillance-related MVQA questions. This dataset not only provides visual question-answer pairs but also multi-camera topology connection matrices and annotations. We believe this dataset will significantly advance research in the field of security surveillance and MVQA.
+      </p>
+
+      <h2 class="title is-3">Datasets</h2>
+
+      <figure class="image is-4by3">
+        <img src="./static/images/dataset-aic.png" alt="Dataset Illustration">
+        <figcaption class="has-text-centered mt-2">Figure: A sample from the AI-Challenge Re-identification dataset</figcaption>
+      </figure>
+
+      <h3 class="title is-4">1. NextQA Surveillance Dataset</h3>
+      <p>
+        <strong>Description:</strong> We manually selected 36 fixed-camera videos from NextQA to emulate surveillance views by eliminating handheld perspective variability.<br>
+        <strong>Annotations:</strong> 300 MVQA questions focused on surveillance-relevant visual content.
+      </p>
+
+      <h3 class="title is-4">2. AI-Challenge Re-identification Dataset</h3>
+      <p>
+        <strong>Description:</strong> Based on re-id scenes involving movement across multiple cameras.<br>
+        <strong>Selection and Annotations:</strong>
+        <ul>
+          <li>Settings: 10 different environments with varying overlap (S01–S21).</li>
+          <li>Clips: 20-second segments from timestamps 9000–9600.</li>
+          <li>Annotations: 5 question categories—Camera Coverage, Location, Movement Monitoring, Movement Prediction, and Counting.</li>
+          <li>Question Generation: GPT-4 generated candidate questions, manually filtered to 300 final questions.</li>
+        </ul>
+      </p>
+
+      <h3 class="title is-4">3. US Gun Mock Attack Dataset</h3>
+      <p>
+        <strong>Description:</strong> Focuses on coordinated mock attack scenarios across three cameras.<br>
+        <strong>Selection and Annotations:</strong> 5 video clips (~10 minutes total), 20 questions about behaviors and events.
+      </p>
+
+      <h2 class="title is-3">Download</h2>
+      <ul>
+        <li>📥 NextQA Surveillance Dataset: <a href="#">[Download Link]</a></li>
+        <li>📥 AI-Challenge Re-identification Dataset: <a href="#">[Download Link]</a></li>
+        <li>📥 US Gun Mock Attack Dataset: <a href="#">[Download Link]</a></li>
+      </ul>
+
+      <h2 class="title is-3">Terms of Use</h2>
+      <p>
+        This dataset is free for academic research. For commercial use, please contact us for licensing.
+      </p>
+
+      <h2 class="title is-3">External References</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="box">
+            <p class="title is-5">AI City Challenge</p>
+            <a href="https://www.aicitychallenge.org/2023-ai-city-challenge/" target="_blank">
+              Visit Site →
+            </a>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="box">
+            <p class="title is-5">NextQA</p>
+            <a href="https://doc-doc.github.io/docs/nextqa.html" target="_blank">
+              Visit Site →
+            </a>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="box">
+            <p class="title is-5">US Gun Detection Dataset</p>
+            <a href="https://deepknowledge-us.github.io/US-Real-time-gun-detection-in-CCTV-An-open-problem-dataset/" target="_blank">
+              Visit Site →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Ⓒ 2025 VidQuery Team · Built with ❤️ and Bulma.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
