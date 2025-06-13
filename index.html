@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VidQeury: LLM-Powered Visual Question Answering for Multi-Camera Systems">
+  <meta name="keywords" content="Vidquery, LLM, Multi-Camera">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> 🎥 VidQeury: LLM-Powered Visual Question Answering for Multi-Camera Systems</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/png" href="./static/images/drone.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">🎥 VidQeury: LLM-Powered Visual Question Answering for Multi-Camera Systems</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://blairjing.github.io/">Xiaojing Yu</a>,</span>
+                          <span class="author-block">
+              <a href="https://leonana69.github.io/guojun.chen/">Guojun Chen</a>,</span>
+            <span class="author-block">
+              <a href="https://linzhong.org/">Lin Zhong</a>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">{xiaojing.yu, guojun.chen,  lin.zhong}@yale.edu</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Yale University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+<!--         <h2 class="title is-3">Abstract</h2> -->
+        <div class="content has-text-justified">
+        <p>
+Multi‑camera surveillance systems are widely deployed in public and private environments, yet their analytical capabilities still focus on basic routines such as object tracking and re‑identification.  Although recent large vision‑language models (VLMs) have advanced Visual Question Answering (VQA) for single‑camera scenes, extending these abilities to multi‑camera settings on edge platforms remains difficult.
+To bridge this gap, we present VidQuery—a Multi‑camera Visual Question Answering (MVQA) system that pairs a cloud‑hosted LLM with on‑premise vision encoders, a ProbLog reasoning layer, and ObjectHub queries executed directly on the edge server.  
+          The cloud LLM dynamically writes ProbLog clauses and Python pipelines; the local ProbLog interpreter then triggers the necessary database look‑ups and vision‑encoder calls.  A lightweight GPU Model Manager further schedules vision encoders (and any resident vLLMs) to fit tight memory budgets.  In this way, VidQuery performs complex cross‑camera analyses—incorporating camera topology and spatial operations for rich multi‑view reasoning—without deploying large vLLMs or LLMs locally.
+          <p>
+We also present the first MVQA dataset tailored for security and surveillance, constructed by extending four publicly available single and multi-camera video datasets with manually validated questions and answers. Our evaluation on 67 video clips and 800 questions demonstrates that Vidquey achieves 92.7% accuracy and an average response time of under four seconds. Without compromising privacy, Vidquey significantly outperforms baseline MVQA approaches based on GPT-4-vision inputs, thereby setting a new benchmark for multi-camera video understanding and analysis.
+        </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+<div class="columns is-centered has-text-centered mt-5">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">System Workflow</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/overview.png" alt="Vidquey Diagram">
+        </div>
+        <p>When a user  enters a command, such as inquiring if Alice is being tracked, the LLM processes this prompt and returns a pipeline in the form of executable code. The Pipeline Runtime then checks for any required function generation, invoking additional function generation prompts if necessary. During execution, the object information within videos is obtained for the pipeline to query and analyze by calling the function interface of vision encoders in the ObjectHUb. It then presents the findings to the user through both visual and textual responses.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered mt-5">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Demo</h2>
+        <div class="content has-text-justified">
+          <p>
+            Query: Find the person who just entered the room holding the calibration board.
+          </p>
+        </div>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/QE1vukLt32A?si=EEH_TjouKFZL2nkQ?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <br>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            Query: Who has been sitting on the chair for the longest time in the past minute?
+          </p>
+        </div>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/6XraI1HN_2k?si=vEVPx0DdgLT9EyVR?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <br>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            Query: Did anyone just meet the person wearing a yellow top?
+          </p>
+        </div>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/QAJK_tugxY8?si=vEVPx0DdgLT9EyVR?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{yu2025vidquery,
+  author    = { Xiaojing Yu and Guojun Chen and Lin Zhong},
+  title     = {VidQeury: LLM-Powered Visual Question Answering for Multi-Camera Systems},
+  year      = {2025}
+}</code></pre>
+  </div>
+</section>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+</body>
+</html>
